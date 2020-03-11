@@ -125,5 +125,5 @@ From the 8 HTTP methods (HEAD, GET, POST, PUT, DELETE, TRACE, OPTIONS, CONNECT) 
 - TRACE - echoes to client whatever string is sent to server (used mostly for debugging) - XST
 
 Many frameworks treat HEAD as GET
-There are also arbitary methods such as CATS, JEFF
+There are also arbitary methods such as CATS, JEFF \
 OPTIONS method requests information about the communication options available
