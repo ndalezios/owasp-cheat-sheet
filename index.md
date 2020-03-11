@@ -168,7 +168,7 @@ Master policy files are located at domain's root \
 # Testing for account enumeration and guessable user account
 Useful for password brute forcing if given a valid username \
 _Applications often reveal if a username exists on system_ \
-Obtain a list of users of a system by brute forcing default credentials \
+Obtain a list of users of a system by brute forcing default credentials
 - Test for valid user with wrong password
 - Test for a nonexistent username
 - Analyze URLs foo.com/index?user=baduser&error=0, foo.com/index?user=gooduser&error=1
