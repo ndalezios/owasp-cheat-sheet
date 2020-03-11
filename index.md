@@ -123,6 +123,7 @@ From the 8 HTTP methods (HEAD, GET, POST, PUT, DELETE, TRACE, OPTIONS, CONNECT) 
 - DELETE - client deletes a file from server
 - CONNECT - use the web server as a proxy
 - TRACE - echoes to client whatever string is sent to server (used mostly for debugging) - XST
+
 Many frameworks treat HEAD as GET
 There are also arbitary methods such as CATS, JEFF
 OPTIONS method requests information about the communication options available
