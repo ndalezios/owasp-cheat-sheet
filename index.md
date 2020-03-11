@@ -90,7 +90,7 @@ Search either by hand or by scripting search criteria
 - Nikto2
 - Wikto
 ### Spidering tools
-- ~~ sam spade ~~
+- ~~sam spade~~
 - Spike proxy
 ### Remediation ###
 Forbid :
@@ -116,4 +116,13 @@ When discovered if everything else fails, try brute forcing
 - THC Hydra
 - Dictionaries(net sparker)
 - Default password lists
-
+# Test HTTP methods #
+HTTP TRACE - Cross Site Tracing (XST) is a form of XSS
+From the 8 HTTP methods (HEAD, GET, POST, PUT, DELETE, TRACE, OPTIONS, CONNECT) 4 are dangerous:
+- PUT - clients uploads file to server
+- DELETE - client deletes a file from server
+- CONNECT - use the web server as a proxy
+- TRACE - echoes to client whatever string is sent to server (used mostly for debugging) - XST
+Many frameworks treat HEAD as GET
+There are also arbitary methods such as CATS, JEFF
+OPTIONS method requests information about the communication options available
