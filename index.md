@@ -3,47 +3,48 @@
 whatweb
 BlindElephant
 # Fingerprinting Web Application
-WordPress, phpBB, MediaWiki etc. as application components
-known headers, cookies & directory structures
-specific files and folders (eg. wp-admin)
-source code – meta name=”generator” content=”WordPress 3.9.2”
-dirbusting – brute force with folder and file names and monitor http responses in order to enumerate server contents
-check robots.txt
+WordPress, phpBB, MediaWiki etc. as application components \
+known headers, cookies & directory structures \
+specific files and folders (eg. wp-admin) \
+source code – meta name=”generator” content=”WordPress 3.9.2” \
+dirbusting – brute force with folder and file names and monitor http responses in order to enumerate server contents \
+check robots.txt \
 ## Tools
-whatweb
-BlindElephant
-wappalyzer
-FuzzDB wordlists of predicatble files/folders
+- whatweb
+- BlindElephant
+- wappalyzer
+- FuzzDB wordlists of predicatble files/folders
 # Map Application Architecture
-It is important to map the network and application architecture as it can vary from a simple webapp and a single server to a complex one (online banking) with multiple servers involved. 
-A complex one usually need multiple DMZs 
-reverse proxy
-frontend web server
-Application server
-Database server
-LDAP server
-Tester assumes that there is a single server and starts asking simple questions (is there a firewall protecting the server?)
-web server banner analysis to detect a reverse proxy in front of web server
-web server answers to requests and comparing responses with the expected 404 but different error message appears
-network load balancer detector – perform multiple requests and examine if the requests are going to the same or different servers
-which database server is being used
+It is important to map the network and application architecture as it can vary from a simple webapp and a single server to a complex one (online banking) with multiple servers involved. \
+A complex one usually need \
+- multiple DMZs 
+- reverse proxy
+- frontend web server
+- Application server
+- Database server
+- LDAP server
+Tester assumes that there is a single server and starts asking simple questions (is there a firewall protecting the server?)\
+- web server banner analysis to detect a reverse proxy in front of web server
+- web server answers to requests and comparing responses with the expected 404 but different error message appears
+- network load balancer detector – perform multiple requests and examine if the requests are going to the same or different servers
+- which database server is being used
 # Test Network Infrastructure Configuration
-determine different elements that make up the infrastructure
-review all elements for known vulnerabilities
-review all administrative tools
-review authentication system
-maintain a list of defined ports required for the application
+- determine different elements that make up the infrastructure
+- review all elements for known vulnerabilities
+- review all administrative tools
+- review authentication system
+- maintain a list of defined ports required for the application
 # Test Application Platform Configuration
 Typical servers contain a lot of functionality – although not essential elements should be removed before deployment.
-comment review – web server static and dynamic contents
-server configuration guidelines
-enable only needed server modules
-handle server errors with custom pages – no errors of application returned to user
-server software is running with minimized privileges in the OS
-server software logs legitimate and non legitimate access and errors
-server is configured to handle overloads and prevent DoS attacks
-encrypt and use strong password when exporting keys
-maintain restricted access to configuration and keys
+- comment review – web server static and dynamic contents
+- server configuration guidelines
+- enable only needed server modules
+- handle server errors with custom pages – no errors of application returned to user
+- server software is running with minimized privileges in the OS
+- server software logs legitimate and non legitimate access and errors
+- server is configured to handle overloads and prevent DoS attacks
+- encrypt and use strong password when exporting keys
+- maintain restricted access to configuration and keys
 # Logging
 Application logs produce debug output
 Server and Application logs
@@ -127,3 +128,16 @@ From the 8 HTTP methods (HEAD, GET, POST, PUT, DELETE, TRACE, OPTIONS, CONNECT) 
 Many frameworks treat HEAD as GET
 There are also arbitary methods such as CATS, JEFF \
 OPTIONS method requests information about the communication options available
+# Test HTTP Strict Transport Security#
+HSTS header informs everyone that all exchanged traffic must always sent over __https__
+- max_age : the number of seconds that the browser should automatically convert all _http_ requests to _https_
+- include subdomains
+
+Security issues that can be produced :
+1. Attackers sniffing the network traffic (through unencrypted channel)
+2. Attackers exploit with mitm attacks (if accepting untrusted certificates)
+3. Users' mistake (use http instead of https)
+
+## Check for HSTS
+`curl -s -D domain | grep Strict`
+# Test Rich Internet Application (RIA) cross domain policy
