@@ -61,5 +61,12 @@ internal IP addresses
 email addresses, names, phone numbers
 business data
 Logs should always be stored on a separate partition
-
+# Test file extensions handling for sensitive information
+Standard extensions provide information about the underlying technologies
+Extension checking to files being uploaded
+- which file extensions are returned as text and which not
+- which cause execution on the server side (eg. .pl for perl)
+## Mitigation?
+Verify directories that allow script execution
+never return extensions such as .inc .asa .conf etc
 
