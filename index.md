@@ -69,4 +69,21 @@ Extension checking to files being uploaded
 ## Mitigation?
 Verify directories that allow script execution
 never return extensions such as .inc .asa .conf etc
+## Tools
+- Nessus
+- Nikto
+# Review old, backup and unreferenced files for sensitive information
+- Renamed old versions of modified files
+- Backup files and snapshots
+- .tar.gz and .zip archives and ~ files
+- login.asp and login.asp.old
+- if *viewuser.asp* exists then search for *edituser.asp* as well
+- if *app/user* exists then search for *app/admin, app/manager* etc.
+- Request all enumerated directories
+- Use publicly available information
+  - archives of internet search engines (*1998results.asp*)
+  - cached versions of google and yahoo
+  - linksby third party applications
+Search either by hand or 
+
 
