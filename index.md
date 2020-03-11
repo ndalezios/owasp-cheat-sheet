@@ -1,5 +1,5 @@
 # Fingerprinting Web Application Framework 
-Tools
+## Tools
 whatweb
 BlindElephant
 # Fingerprinting Web Application
@@ -9,7 +9,7 @@ specific files and folders (eg. wp-admin)
 source code – meta name=”generator” content=”WordPress 3.9.2”
 dirbusting – brute force with folder and file names and monitor http responses in order to enumerate server contents
 check robots.txt
-Tools
+## Tools
 whatweb
 BlindElephant
 wappalyzer
@@ -44,7 +44,7 @@ server software logs legitimate and non legitimate access and errors
 server is configured to handle overloads and prevent DoS attacks
 encrypt and use strong password when exporting keys
 maintain restricted access to configuration and keys
-Logging
+# Logging
 Application logs produce debug output
 Server and Application logs
 do they contain sensitive information
