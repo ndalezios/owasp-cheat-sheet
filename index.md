@@ -71,7 +71,7 @@ Verify directories that allow script execution
 never return extensions such as .inc .asa .conf etc
 ## Tools
 - Nessus
-- Nikto
+- Nikto2
 # Review old, backup and unreferenced files for sensitive information
 - Renamed old versions of modified files
 - Backup files and snapshots
@@ -84,6 +84,36 @@ never return extensions such as .inc .asa .conf etc
   - archives of internet search engines (*1998results.asp*)
   - cached versions of google and yahoo
   - linksby third party applications
-Search either by hand or 
-
+Search either by hand or by scripting search criteria
+## Tools
+- Nessus
+- Nikto2
+- Wikto
+### Spidering tools
+- ~~ sam spade ~~
+- Spike proxy
+### Remediation ###
+Forbid :
+- Server inplace editing
+- Check other activity (automated snapshots)
+- Configuration management
+- Never create files under the directory tree
+- Deny access to snapshots directories
+# Enumerate infrastructure and application admin interfaces
+Admin interfaces do not have always sufficient controls to protect from unauthorized access
+Discover these interfaces and access functionality intended for privileged users
+Test for presence of admin interfaces by :
+- Directory and file enumeration
+- Identifying filename of administration page
+- Comments and links to page source
+- Reviewing server and application documentation (default configuration and passwords)
+- Publicly availably information
+- Searching on alternate server ports
+- Tampering parameters (GET, POST, Cookie) to enable admin interface
+When discovered if everything else fails, try brute forcing
+## Tools ##
+- Dirbuster
+- THC Hydra
+- Dictionaries(net sparker)
+- Default password lists
 
