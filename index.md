@@ -16,14 +16,14 @@ check robots.txt \
 - FuzzDB wordlists of predicatble files/folders
 # Map Application Architecture
 It is important to map the network and application architecture as it can vary from a simple webapp and a single server to a complex one (online banking) with multiple servers involved. \
-A complex one usually need \
+A complex one usually need 
 - multiple DMZs 
 - reverse proxy
 - frontend web server
 - Application server
 - Database server
 - LDAP server
-Tester assumes that there is a single server and starts asking simple questions (is there a firewall protecting the server?)\
+Tester assumes that there is a single server and starts asking simple questions (is there a firewall protecting the server?)
 - web server banner analysis to detect a reverse proxy in front of web server
 - web server answers to requests and comparing responses with the expected 404 but different error message appears
 - network load balancer detector – perform multiple requests and examine if the requests are going to the same or different servers
@@ -142,3 +142,41 @@ Security issues that can be produced :
 ## Check for HSTS
 `curl -s -D domain | grep Strict`
 # Test Rich Internet Application (RIA) cross domain policy
+Oracle, Java, Flash & Silverlight have adopted _crossdomain.xml_ to allow cross domain access to data. \
+Poorly configured access for crossdomain data can enable
+1. Cross site request forgery attacks
+2. Access sensitive data
+- crossdomain.xml
+- clientaccesspolicy.xml
+
+Master policy files are located at domain's root \
+- Abuse by overlying policy
+- Generate responses that may be treated as policy files
+- Upload files that may me treated as policy files
+- Try to retrieve policy files
+## Tools
+- Nikto
+- Zed attack proxy
+- W3af
+# Test and validate user registration process
+1. Same person register multiple times
+2. Same person - different roles
+3. Can identity be forged or faked
+# Test account provisioning process
+1. Opportunity for an attacker to create a valid account without proper identification and authorization
+2. Can an administrator provision other administrators?
+# Testing for account enumeration and guessable user account
+Useful for password brute forcing if given a valid username \
+_Applications often reveal if a username exists on system_ \
+Obtain a list of users of a system by brute forcing default credentials \
+- Test for valid user with wrong password
+- Test for a nonexistent username
+- Analyze URLs foo.com/index?user=baduser&error=0, foo.com/index?user=gooduser&error=1
+- URI probing - different responses for different directory requests (existing or not)
+  - foo.com/account1 - 403 Forbidden
+  - foo.com/account2 - 404 Not Found
+
+
+
+
+
