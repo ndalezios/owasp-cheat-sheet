@@ -1,7 +1,7 @@
 # Fingerprinting Web Application Framework 
 ## Tools
-whatweb
-BlindElephant
+- whatweb
+- BlindElephant
 # Fingerprinting Web Application
 WordPress, phpBB, MediaWiki etc. as application components \
 known headers, cookies & directory structures \
@@ -47,20 +47,21 @@ Typical servers contain a lot of functionality – although not essential elemen
 - maintain restricted access to configuration and keys
 # Logging
 Application logs produce debug output
-Server and Application logs
-do they contain sensitive information
-are they stored on a dedicated server
-can log usage generate DoS
-how they are rotated and reviewed
-are the data being logged validated before logging
-Logs often contain
-debug information
-stack traces
-usernames
-system component names
-internal IP addresses
-email addresses, names, phone numbers
-business data
+### Server and Application logs
+1. do they contain sensitive information
+2. are they stored on a dedicated server
+3. can log usage generate DoS
+4. how they are rotated and reviewed
+5. are the data being logged validated before logging
+Logs often contain : 
+- debug information
+- stack traces
+- usernames
+- system component names
+- internal IP addresses
+- email addresses, names, phone numbers
+- business data
+
 Logs should always be stored on a separate partition
 # Test file extensions handling for sensitive information
 Standard extensions provide information about the underlying technologies
@@ -93,7 +94,7 @@ Search either by hand or by scripting search criteria
 ### Spidering tools
 - ~~sam spade~~
 - Spike proxy
-### Remediation ###
+### Remediation
 Forbid :
 - Server inplace editing
 - Check other activity (automated snapshots)
@@ -112,12 +113,12 @@ Test for presence of admin interfaces by :
 - Searching on alternate server ports
 - Tampering parameters (GET, POST, Cookie) to enable admin interface
 When discovered if everything else fails, try brute forcing
-## Tools ##
+## Tools 
 - Dirbuster
 - THC Hydra
 - Dictionaries(net sparker)
 - Default password lists
-# Test HTTP methods #
+# Test HTTP methods
 HTTP TRACE - Cross Site Tracing (XST) is a form of XSS
 From the 8 HTTP methods (HEAD, GET, POST, PUT, DELETE, TRACE, OPTIONS, CONNECT) 4 are dangerous:
 - PUT - clients uploads file to server
@@ -128,7 +129,7 @@ From the 8 HTTP methods (HEAD, GET, POST, PUT, DELETE, TRACE, OPTIONS, CONNECT) 
 Many frameworks treat HEAD as GET
 There are also arbitary methods such as CATS, JEFF \
 OPTIONS method requests information about the communication options available
-# Test HTTP Strict Transport Security#
+# Test HTTP Strict Transport Security
 HSTS header informs everyone that all exchanged traffic must always sent over __https__
 - max_age : the number of seconds that the browser should automatically convert all _http_ requests to _https_
 - include subdomains
