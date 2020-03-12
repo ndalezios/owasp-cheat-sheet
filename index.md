@@ -8,7 +8,7 @@ known headers, cookies & directory structures \
 specific files and folders (eg. wp-admin) \
 source code – meta name=”generator” content=”WordPress 3.9.2” \
 dirbusting – brute force with folder and file names and monitor http responses in order to enumerate server contents \
-check robots.txt \
+check robots.txt 
 ## Tools
 - whatweb
 - BlindElephant
@@ -175,8 +175,22 @@ Obtain a list of users of a system by brute forcing default credentials
 - URI probing - different responses for different directory requests (existing or not)
   - foo.com/account1 - 403 Forbidden
   - foo.com/account2 - 404 Not Found
-
-
+- Analyze web page titles (_invalid user / invalid authentication_)
+- Analyze message from recovery facility (eg. password recovery) (_valid or invlalid username_)
+- Friendly 404 error message (_200 OK with image_) - user does not exists
+- Patterns for users _U001, U002, ..._ Are these ids associated with credit card numbers or real names (_eg. ndale_)
+### Attention, accounts may be blocked
+## Tools
+- WebScarab
+- curl
+# Testing for weak or unenforced username policy
+eg. _Nikos Dalezios -> ndale, Joe Bloggs - jbloggs_
+# Testing for credentials trasported over an encrypted channel
+Do data travel between client and server through unencrypted channel or HTTPS
+### Encrypted is not always safe. It depends on the algorith and the robustness of keys
+Always check Request headers, POST address and Referer.
+# Testing for default credentials
+When an application interface is identified (eg. Cisco router web interface) __check for default usernames and passwords__.
 
 
 
