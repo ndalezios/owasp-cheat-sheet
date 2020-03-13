@@ -191,6 +191,24 @@ Do data travel between client and server through unencrypted channel or HTTPS
 Always check Request headers, POST address and Referer.
 # Testing for default credentials
 When an application interface is identified (eg. Cisco router web interface) __check for default usernames and passwords__.
+if not successfull, at least find a vslid username. \
+Common usernames are admin, administrator, root, system, guest, operator, super, test, test1  etc.
+- Application admin users are often named after the application or organization (google/google)
+- Contacts are often used as usernames (John Doe -> jdoe@example.com)
+- Search social media for administrator's name
+- Check usernames with blank passwords
+- View html source and comments
+- Check urls (startupurl=/admin.asp else index.asp)
+- New account and default password
+- Look for user registration page to understand password format and length
+- How are usernames generated?
+- -Create many accounts quickly
+## Tools
+- Burp Intruder
+- THC Hydra
+- Brutus
+- Nikto 2
+
 
 
 
