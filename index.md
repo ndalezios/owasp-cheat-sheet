@@ -202,7 +202,7 @@ Common usernames are admin, administrator, root, system, guest, operator, super,
 - New account and default password
 - Look for user registration page to understand password format and length
 - How are usernames generated?
-- -Create many accounts quickly
+- Create many accounts quickly
 ## Tools
 - Burp Intruder
 - THC Hydra
