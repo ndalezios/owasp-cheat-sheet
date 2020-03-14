@@ -232,6 +232,7 @@ If session id is predictable, a malicious user could be able to find a valid ses
 ## Tools
 - Webscarab
 - Webgoat
+
 (see section Gray Box Testing)
 
 
