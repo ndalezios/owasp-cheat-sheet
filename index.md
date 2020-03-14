@@ -208,6 +208,19 @@ Common usernames are admin, administrator, root, system, guest, operator, super,
 - THC Hydra
 - Brutus
 - Nikto 2
+# Testing for weak lock out mechanism
+Usually lockout is excuted after 3 to 5 unsuccessfull attemps in order to
+- Protect accounts from unauthorized access
+- Protect users from being denied authorized access
+Tester need to access an account that can afford to lock.
+Examine what happens when you enter
+- Icorrect password 3 times and then the correct one
+- Icorrect password 4 times and then the correct one
+- Icorrect password 5 times and then the correct one
+- Also try time gaps 5,10, 15 minutes)
+# Testing for bypassing authentication schema
+Skipping login page and directly calling an internal page that is supposed to be accessed only after authentication.\
+It is often possible
 
 
 
