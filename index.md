@@ -220,7 +220,19 @@ Examine what happens when you enter
 - Also try time gaps 5,10, 15 minutes)
 # Testing for bypassing authentication schema
 Skipping login page and directly calling an internal page that is supposed to be accessed only after authentication.\
-It is often possible
+It is often possible to bypass auth by tampering with requests (_tricking the web app to think that the user is already authenticated_) by modifying URL parameters, manipulating a form, counterfeiting sessions etc. Test by
+- Direct page request (forced browsing) through address bar or curl
+- Parameter modification
+- Session ID prediction
+- SQL injection
+### Parameter modification
+Change _http://foo.bar/page=index?authenticated=__no___ to _http://foo.bar/page=index?authenticated=__yes___
+### Session ID prediction
+If session id is predictable, a malicious user could be able to find a valid session ID. Cookie stored values may change only partially (_restrict brute force_)
+## Tools
+- Webscarab
+- Webgoat
+(see section Gray Box Testing)
 
 
 
