@@ -234,11 +234,29 @@ If session id is predictable, a malicious user could be able to find a valid ses
 - Webgoat
 
 (see section Gray Box Testing)
-## Testing for vulnerable Remeber Password functionality
+# Testing for vulnerable Remeber Password functionality
 - Browser _Remember me_ functionality
 - API custom _Remember me_ functionality
 - Passwords inside a cookie
 - Credentials are sent during login
+# Testing for browser cache weakness
+__Back button is history, not cache__
+- Check with a proxy so that every page or request with sensitive data does not cache them
+- Check HTTP headers
+  - Cache control : no-cache
+  - Expires : 0
+  - Pragma : no-cache
+## Tools
+- Cache Viewer 2 (Firefox addon)
+# Testing for weak password policy
+- What characters are permitted and forbidden for a password (length, upper/lower case, digits etc)
+- How often a user has to change password
+- How often a user can reuse a password
+- How different must the next password be
+- Can password contain username
+# Testing for weak security question/answer
+Upon account creation
+
 
 
 
