@@ -226,7 +226,7 @@ It is often possible to bypass auth by tampering with requests (_tricking the we
 - Session ID prediction
 - SQL injection
 ### Parameter modification
-Change _http://foo.bar/page=index?authenticated=__no___ to _http://foo.bar/page=index?authenticated=__yes___
+Change _http://foo.bar/page=index?authenticated=no_ to _http://foo.bar/page=index?authenticated=yes_
 ### Session ID prediction
 If session id is predictable, a malicious user could be able to find a valid session ID. Cookie stored values may change only partially (_restrict brute force_)
 ## Tools
