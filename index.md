@@ -234,6 +234,11 @@ If session id is predictable, a malicious user could be able to find a valid ses
 - Webgoat
 
 (see section Gray Box Testing)
+## Testing for vulnerable Remeber Password functionality
+- Browser _Remember me_ functionality
+- API custom _Remember me_ functionality
+- Passwords inside a cookie
+- Credentials are sent during login
 
 
 
