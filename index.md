@@ -255,7 +255,11 @@ __Back button is history, not cache__
 - How different must the next password be
 - Can password contain username
 # Testing for weak security question/answer
-Upon account creation
+Upon account creation it is required the user to select _pregenerated_ or _custom_ security questions \
+- Pregenerated - obtain a list of questions by creating a new account
+- Custom - Does the system allow creation of custom questions
+- Can the be brute forcable?
+- How many guesses do you have
 
 
 
