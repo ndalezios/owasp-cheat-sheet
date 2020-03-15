@@ -279,6 +279,7 @@ Firstly, identify alternative channels suck as
 - parallel web sites (may have different functionality)
 - development versions
 - site versions without cookies, javascript, flash or java plugins
+
 Indetify alternative channels by
 - Reading Home, Contact, FAQ etc
 - HTTP proxy logs search for strings "mobile", "android", "ipad", "mobile", "auth", "sso" etc
