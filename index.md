@@ -309,6 +309,22 @@ _Alternative channels should always be mentioned in test report even as "informa
     - unicode/utf8 encoding
       - ../
       - .. \ and more
+   - Extraneous parent directory markers that may or may not exist
+   - Windows API
+   - Windows UNC filepaths (used to reference files on SMB)
+     - \\server\path\file.abc
+     - \\?\server\path\file.abc
+   - Windows NT device Namespace
+   - Drive letters (C: etc)
+   - Volumes (\\.\GLOBALROOT\Device\HarddiskVolume1\ , \\.\CDROM0, etc)
+   - Grep source for 
+     - PHP - include(), include_once(), require(), require_once(), fopen(), readfile()
+     - Java - java.io.File(),java.io.FileReader()
+     - ASP - include file, include virtual
+   - Analyze functions - eg replace(filename, "/", "\") -> file= ..//..//
+## Tools
+- DotDotPwn - The directory traversla fuzzer
+- WFuzz - Path traversal Fuzz strings
       
 
  
