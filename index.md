@@ -321,7 +321,7 @@ _Alternative channels should always be mentioned in test report even as "informa
      - PHP - include(), include_once(), require(), require_once(), fopen(), readfile()
      - Java - java.io.File(),java.io.FileReader()
      - ASP - include file, include virtual
-   - Analyze functions - eg replace(filename, "/", "\") -> file= ..//..//
+   - Analyze functions - eg replace(filename, "/", "\\") -> file= ..//..//
 ## Tools
 - DotDotPwn - The directory traversla fuzzer
 - WFuzz - Path traversal Fuzz strings
