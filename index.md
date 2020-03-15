@@ -280,6 +280,11 @@ Firstly, identify alternative channels suck as
 - development versions
 - site versions without cookies, javascript, flash or java plugins
 Indetify alternative channels by
+- Reading Home, Contact, FAQ etc
+- HTTP proxy logs search for strings "mobile", "android", "ipad", "mobile", "auth", "sso" etc
+- Use search engines to find different sites from the same organization
+- Does an alternative channel has any extra functionality (eg. password reset)
+__Alternative channels should always be mentioned in test report even as "information only"__
 
  
 
