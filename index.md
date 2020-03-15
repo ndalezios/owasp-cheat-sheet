@@ -263,7 +263,25 @@ Upon account creation it is required the user to select _pregenerated_ or _custo
 # Testing for weak password change or reset functionalities
 - Check if non admin users can change or reset password for other accounts
 - Is the password change/reset vulnerable to [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery)?
-- What information
+- What information is required to reset a password (eg. security questions)
+- How passwords are communicated to the user?
+  - Plain text showing
+  - Forcing to change
+- Are reset passwords generated randomly?
+- Does this process requests information before changing password?
+- Is the old password requested in order to complete the change?
+# Testing for weaker authentication in alternative channel
+Firstly, identify alternative channels suck as
+- other website or web app
+- mobile app
+- accessibility optimized version
+- alternative country and language
+- parallel web sites (may have different functionality)
+- development versions
+- site versions without cookies, javascript, flash or java plugins
+Indetify alternative channels by
+
+ 
 
 
 
