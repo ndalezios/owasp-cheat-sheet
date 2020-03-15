@@ -284,7 +284,8 @@ Indetify alternative channels by
 - HTTP proxy logs search for strings "mobile", "android", "ipad", "mobile", "auth", "sso" etc
 - Use search engines to find different sites from the same organization
 - Does an alternative channel has any extra functionality (eg. password reset)
-__Alternative channels should always be mentioned in test report even as "information only"__
+
+_Alternative channels should always be mentioned in test report even as "information only"_
 
  
 
