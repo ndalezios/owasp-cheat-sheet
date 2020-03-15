@@ -255,12 +255,15 @@ __Back button is history, not cache__
 - How different must the next password be
 - Can password contain username
 # Testing for weak security question/answer
-Upon account creation it is required the user to select _pregenerated_ or _custom_ security questions \
+Upon account creation it is required the user to select _pregenerated_ or _custom_ security questions 
 - Pregenerated - obtain a list of questions by creating a new account
 - Custom - Does the system allow creation of custom questions
 - Can the be brute forcable?
 - How many guesses do you have
-
+# Testing for weak password change or reset functionalities
+- Check if non admin users can change or reset password for other accounts
+- Is the password change/reset vulnerable to [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery)?
+- What information
 
 
 
