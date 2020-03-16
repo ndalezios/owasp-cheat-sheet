@@ -349,7 +349,7 @@ _?.....userID=fakeuser&role=3&group=grp001_
 Accessing resources (db entries, files etc) directly by modifying the value of a parameter \
 It is used to directly point an object \
 Map out all the locations where user input is used to reference to objects directly (eg locations where user input is used to access a database row) \
-Best way : 2 or more users to cover different objects and functions \
+Best way : 2 or more users to cover different objects and functions 
 - eg. foo.bar/...?invoice=12345 -> modify this to see other user's invoices
 - eg. foo.bar/changepassword?user=someuser -> modify this to change other user's password
 - eg. foo.bar/...?menuitem=12 -> modify this to access restricted menus
