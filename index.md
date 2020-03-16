@@ -1,5 +1,5 @@
 # Fingerprinting Web Application Framework 
-### Tools
+## Tools
 - whatweb
 - BlindElephant
 # Fingerprinting Web Application
@@ -353,7 +353,7 @@ Best way : 2 or more users to cover different objects and functions
 - eg. foo.bar/...?invoice=12345 -> modify this to see other user's invoices
 - eg. foo.bar/changepassword?user=someuser -> modify this to change other user's password
 - eg. foo.bar/...?menuitem=12 -> modify this to access restricted menus
-# SESSION MANAGEMENT TESTING
+# __SESSION MANAGEMENT TESTING__
 Mechanism by which a web app controls user's state
 __HTTP is stateless__
 Multiple user requests have to be associated accross a session
