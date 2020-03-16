@@ -287,7 +287,7 @@ Indetify alternative channels by
 
 _Does an alternative channel has any extra functionality (eg. password reset)_
 _Alternative channels should always be mentioned in test report even as "information only"_
-
+# AUTHORIZATION TESTING
 # Testing directory traversla/file include (aka ../)
 2 different stages
 - Input vectors enumeration
@@ -353,6 +353,28 @@ Best way : 2 or more users to cover different objects and functions
 - eg. foo.bar/...?invoice=12345 -> modify this to see other user's invoices
 - eg. foo.bar/changepassword?user=someuser -> modify this to change other user's password
 - eg. foo.bar/...?menuitem=12 -> modify this to access restricted menus
+# SESSION MANAGEMENT TESTING
+Mechanism by which a web app controls user's state
+__HTTP is stateless__
+Multiple user requests have to be associated accross a session
+# Testing session management schema
+Apps must avoid continuous authentication for each page. \
+Cookies and other session tokens are created in a secure way. \
+Cookies provide data to the app about who the user is, what actions have been performed so far, preferences etc. \
+Tampering with cookies may result in session hijacking. Steps of the attack
+- cookie collection - number of samples
+- cookie reverse engineering - analysis of cookie generation algorithm
+- cookie manipulation - forge a valid cookie (maybe use cookie brute forcing)
+
+* Cookie overflow: Overflow a memory area and possibly inject malicious code
+## Tests
+Questions for the tester:
+- Are all "Set-Cookie" directives "Secure" ?
+- Cookie operations over unencrypted transport
+- Can the cookie be forced over unencrypted transport?
+- Are there any persistent cookies?
+- Check "Expires"
+- What "Cache-Control" settings are used to protect cookies?
 
       
 
