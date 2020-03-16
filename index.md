@@ -325,6 +325,35 @@ _Alternative channels should always be mentioned in test report even as "informa
 ## Tools
 - DotDotPwn - The directory traversla fuzzer
 - WFuzz - Path traversal Fuzz strings
+# Testing for bypassing authorization schema
+- Is it possible to access a resource if the user is not authenticated?
+- Is it possible to access a resource after logout?
+- Is it possible to access functions and resources that should not be accessible to a user with different privilege?
+
+_eg. adduser.jsp is part of an administration menu. Is it possible to access it by requesting the URL?_
+
+# Testing for privilege escalation
+Escalating privileges from one stage to another
+- Vertical - to more privileged accounts
+- Horizontal - to similar privileged accounts
+
+- Users create information in database (add contact, make payment etc)
+- Users receive information (account statements, order details etc)
+- Users delete information (drop user, delete messages etc)
+
+All the above information should be recorded
+The tester should access these functions as another user
+_?.....userID=fakeuser&role=3&group=grp001_
+
+# Testing for insecure direct object references
+Accessing resources (db entries, files etc) directly by modifying the value of a parameter \
+It is used to directly point an object \
+Map out all the locations where user input is used to reference to objects directly (eg locations where user input is used to access a database row) \
+Best way : 2 or more users to cover different objects and functions \
+- eg. foo.bar/...?invoice=12345 -> modify this to see other user's invoices
+- eg. foo.bar/changepassword?user=someuser -> modify this to change other user's password
+- eg. foo.bar/...?menuitem=12 -> modify this to access restricted menus
+
       
 
  
