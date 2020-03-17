@@ -401,7 +401,7 @@ All these should be tested for randomness, uniqueness and resistance to cryptogr
 - Can the next ID be deduced or guessed ?
 
 ### Cookie reverse engineering
-
+Cookie's characteristics for secure session management
 
 
       
