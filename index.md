@@ -389,7 +389,7 @@ Common session tokens are Cookies, SessionIDs and Hidden Fields \
 All these should be tested for randomness, uniqueness and resistance to cryptographic analysis
 - Token structure and information leakage eg. "192.168.1.5:owaspuser:password:12345" can be encoded to _Hex, Base64, MD5 etc._
   - Hybrid tokens include IP, user id and encoded info
-  - 32 bit token 16 bit static and 16 bit variable data
+  - 32 bit token - 16 bit static and 16 bit variable data
 - What parts of session id are static
 - What clear text confidential information is stored
 - Is there a pattern in session id (whole or partialy)
