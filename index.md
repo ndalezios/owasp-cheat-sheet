@@ -376,6 +376,18 @@ Questions for the tester:
 - Check "Expires"
 - What "Cache-Control" settings are used to protect cookies?
 
+### Cookie collection (surf the application)
+- How does the application creates and manages cookies?
+- How many cookies are used by the application?
+- Which pages generate them and modifies them?
+- Which parts require cookies in order to accessed and utilized
+__Access a page with and without a cookie__
+_Everything must be noted down to a spreadsheet_
+
+### Session Analysis
+Common session tokens are Cookies, SessionIDs and Hidden Fields \
+All these should be tested for randomness, uniqueness and resistance to cryptographic analysis
+
       
 
  
