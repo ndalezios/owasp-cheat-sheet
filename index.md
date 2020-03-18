@@ -402,6 +402,40 @@ All these should be tested for randomness, uniqueness and resistance to cryptogr
 
 ### Cookie reverse engineering
 Cookie's characteristics for secure session management
+- Unpredictability with random values and cryptography
+- Tamper resistance - eg. cookie "isAdmin=No - the application must append an encrypted hash of its value
+- Expiration - critical cookies must be valid for a short period of time and be deleted afterwards.
+- Secure flag - enable it to allow transmission only in and encrypted channel
+
+Always record the exact time when a cookie has been obtained (time could be a part of the cookie value). \
+Session id must be at least _50_ characters long.
+
+### Tools
+- Burp Sequencer
+- FoundStone Cookie Digger
+- Yegh's Hijack __check again__
+
+## Testing for cookies attributes
+Cookie attributes :
+- secure - send only over HTTPS
+- HttpOnly - cookie cannot be accessed via client side script (eg. Javascript)
+- domain - it is used to compareagainst the domain of the server in which the URL is being requested (if not set default the server hostname)
+- path - In addition to the domain, path that the cookie is valid
+- expires - if not set, cookie is valid in the current browser session and will be deleted when the session ends.
+
+### Tools 
+- Tamper Data (Firefox addon)
+
+## Testing for session fixation 
+Occurs when application does not renew its session cookie after a successfull user authentication. Session fixation vulnerabilities can occur when :
+- a web app authenticates a user without first invalidating the existing sesison id (continuing use of existing session id)
+- attacker forces a known session id so, when user authenticates, attacker gains access to the session
+
+Attacker creates a new session and records the session id. He then causes the vivtim to authenticate using the same session id.
+
+### Tests
+- Make a request (GET example.com)
+
 
 
       
