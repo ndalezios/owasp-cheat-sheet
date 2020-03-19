@@ -435,10 +435,32 @@ Attacker creates a new session and records the session id. He then causes the vi
 
 ### Tests
 - Make a request (GET example.com)
+- Server sends cookie and responds
+- Tester sends a POST request to authenticate
+- Server responses OK _but does not set a new session id or cookie_
 
+### Tools
+Hijack (numeric session hijacking tool)
 
+## Testing for exposed session variables
+Cookie, SessionID, hidden field, if exposed will enable attacker to impersonate a user. Protect for eavesdropping at all times. Each time session id data is passed between client and server, _protocol, cache, privacy and body directives_ should be examined
 
-      
+### Tests
+- Testing for encryption and reuse of session tokens vulnerabilities. Protect from eavesdropping with SSL encryption. _Transport encryption and Session ID hashing are 2 different things._
+  - Replace _https://_ with _http://_
+  - Session id must be monitored as the user switches from secure to non-secure elements.
+- Testing for proxies & caching vulnerabilites. Clients ofetn access applications through corporate ISPs or other proxies. Session id should never be cached and sent over unencrypted transport.
+  - Cache-Control : no cache
+  - Expires : 0
+  - Cache-control : mae-age=0
+- Testing for GET & POST vulnerabilities. GET requests should not be used. Cross site scripting (XSS) attacks are easy by sending a link to the victim. _Server should not accept GET requests (...login.asp?Login=username&Password=12345&SessionID=1234567)_
+- Testing for transport vulnerabilities. All app- client interaction should be tested on:
+  - how are sessiond ids transferred (GET, POST, form field)
+  - are session ids always sent over encrypted transport?
+  - can the app be manipulated to send session ids unencrypted?
+  - what _cache-control_ directives are applied to requests and respones (regarding session ids)
+  - can a POST be interchanged with GET?
+
 
  
 
