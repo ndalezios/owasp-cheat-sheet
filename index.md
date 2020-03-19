@@ -461,6 +461,28 @@ Cookie, SessionID, hidden field, if exposed will enable attacker to impersonate 
   - what _cache-control_ directives are applied to requests and respones (regarding session ids)
   - can a POST be interchanged with GET?
 
+## Testing for CSRF
+CSRF attack forces user to execute unwanted actions on a web app he has already authenticated (with a little help from social engineering). CSRF relies on
+- web browser behavior on session handling (cookies and auth information)
+- knowledge by the attacker of valid web app urls
+- application session management relying only on information known by the browser
+- existence of HTML tags whose presence can cause immediate access to a _http/https_ resource (<img>).
+
+If the victim has authenticated, every next request causes the cookie be automatically sent with it. 
+A GET request could be originated by user
+- who is using the web app
+- who types url directly in the browser
+- following an external link
+
+A web app cannot distinguish the above invocations
+### Scenario
+- Victim surfs on a firewall web interface. User authenticates and session information is stored to a cookie
+- An authenticated user can delete a single rule or all of the ("\*")
+- Delete rule page uses a form with a GET request (_...../delete?rule=1_ or _...../delete?rule=*_)
+- Attacker can manually submit the url, or redirect the user or access this url with an embedded ima tag \ _<img src=...../delete?rule=*_
+
+If a user is logged id in the admin interface the request will succeed. \
+This attack can also succeed behind a firewall as the link must be reachable only by the victim and not the attacker.
 
  
 
