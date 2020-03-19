@@ -479,7 +479,8 @@ A web app cannot distinguish the above invocations
 - Victim surfs on a firewall web interface. User authenticates and session information is stored to a cookie
 - An authenticated user can delete a single rule or all of the ("\*")
 - Delete rule page uses a form with a GET request (_...../delete?rule=1_ or _...../delete?rule=*_)
-- Attacker can manually submit the url, or redirect the user or access this url with an embedded ima tag \ _<img src=...../delete?rule=*_
+- Attacker can manually submit the url, or redirect the user or access this url with an embedded image tag 
+_<img src=...../delete?rule=*_
 
 If a user is logged id in the admin interface the request will succeed. \
 This attack can also succeed behind a firewall as the link must be reachable only by the victim and not the attacker.
