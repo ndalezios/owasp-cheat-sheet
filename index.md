@@ -337,9 +337,10 @@ Escalating privileges from one stage to another
 - Vertical - to more privileged accounts
 - Horizontal - to similar privileged accounts
 
-- Users create information in database (add contact, make payment etc)
-- Users receive information (account statements, order details etc)
-- Users delete information (drop user, delete messages etc)
+Users
+- create information in database (add contact, make payment etc)
+- receive information (account statements, order details etc)
+- delete information (drop user, delete messages etc)
 
 All the above information should be recorded
 The tester should access these functions as another user
