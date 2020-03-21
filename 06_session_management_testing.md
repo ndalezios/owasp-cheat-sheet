@@ -130,6 +130,24 @@ _<img src=...../delete?rule=*_
 If a user is logged id in the admin interface the request will succeed. \
 This attack can also succeed behind a firewall as the link must be reachable only by the victim and not the attacker.
 
+### Tests
+The tester must know URLs in the authenticated area. If he posseses valid credentials he can assume both roles (attacker and victim). If he doesn't, a real attack has to be organized (_social engineering_)
+
+#### Steps of a test case
+- set u = http://......../action
+- build an html page containing the http request for _u_ (dpecify all parameters)
+- make sure the valid user is logged in the application
+- induce him into following _u (the link)_
+- observe the result (_did the web server execute the request?_)
+
+### Tools
+- WebScarab Spider
+- CSRF Tester (OWASP)
+- Cross Site Requester (http://bl0g.yehg.net/)
+- Cross Frame Louder (http://bl0g.yehg.net/)
+- Pinata-csrf-tool
+
+## Testing for logout functionality
  
 
 
