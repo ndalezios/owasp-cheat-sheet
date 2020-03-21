@@ -148,7 +148,36 @@ The tester must know URLs in the authenticated area. If he posseses valid creden
 - Pinata-csrf-tool
 
 ## Testing for logout functionality
- 
+Reducing to a minimum the lifetime of the session tokens decreases the likelihood of a successfull session hijacking attack.\
+Secure session termination requires
+- availability of user interface controls that allow the user to manually log out
+- session timeout after a given ammount of time
+- proper invalidation of server side session state
+
+A common mistake is that upon session termination the client side session token is set to a new value while the server side remains active and can be reused.
+
+Single Sign On (SSO) system instead of application specific auth schemes causes the coexistence of multiple sessions which have to be terminated separately.
+
+### Tests
+- Testing for logout user interface. View each page from the prespective of a user who has the intention to log out (eg. Logout button)
+- Testing for server side session termination
+  1. Store cookie values that are used to identify a session
+  2. Log out and observe session cookies
+  3. Navigate to a page visible only to authenticated users
+  4. If new cookie session cookie is set, restore the old value and reload page
+- Testing for session timeout - determine timeout value by sending delayed requests
+- Testing for session termination in SSO systems by performing a log out to a specific application
+
+### Tools
+Burp Suite - Repeater
+
+## Test Session Timeout
+All applications should implement idle (inactivity) timeout. Session timeout management and expiration must be enforced on server side. After timeout is expired, the user's session must be invalidated and delete every data stored on the client. \
+All session tokens must be properly destroyed and proper controls are forced on the server in order to prevent reuse of these tokens.
+
+### Tests
+- Is the timeout enforced by the client of by the server?
+  If cookie is _persistent_ (stores data about time, eg login time, last access, expiration date) timeout is enforced by the client  (modify this)
 
 
 
