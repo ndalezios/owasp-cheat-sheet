@@ -1,4 +1,4 @@
-# SESSION MANAGEMENT TESTING
+# Session Management Testing
 Mechanism by which a web app controls user's state
 __HTTP is stateless__
 Multiple user requests have to be associated accross a session
