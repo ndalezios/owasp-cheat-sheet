@@ -179,6 +179,14 @@ All session tokens must be properly destroyed and proper controls are forced on 
 - Is the timeout enforced by the client of by the server?
   If cookie is _persistent_ (stores data about time, eg login time, last access, expiration date) timeout is enforced by the client  (modify this)
 
+## Testing for Session Puzzling
+Session variable overloading vulnerability occurs when an application uses the same session variable for more than one purpose. An attacker can potentially access pages in an order unanticipated by the developers, so that the session is set in one context and then used in another. \
+For example,an authentication bypass attack vector could be executed by accessing a publicly accessible entry point (such as oassword recovery page) that populates the session with an identical session variable.
+
+### Tests
+Enumerate all sesison variables used by the application and in which context they are valid. \
+In the password recovery entry point, the user could be requested to provide username, email etc. \
+The session might populate these values
 
 
 
