@@ -188,5 +188,9 @@ Enumerate all sesison variables used by the application and in which context the
 In the password recovery entry point, the user could be requested to provide username, email etc. \
 The session might populate these values
 
+## Testing for Reflected Cross Site Scripting
+It is not persistent and only impacts users who open a maliciously crafted link. \
+Unvalidated input is sent through requests back to the client. Attacker creates and tests an offending URI (social engineering). Attacker's code is usually in Javascript. Commot attacks install key loggers, steal victim cookies, steal clipboard content, change page content etc.
 
+In some case
 
