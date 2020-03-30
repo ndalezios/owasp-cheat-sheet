@@ -231,3 +231,23 @@ Examples :
 - OWASP Zed Attack Proxy
 - OWASP Xenotic XSS Expoloit Framework
 
+## Testing for Stored Cross Site Scripting
+When malicious inout is stored for late use. This malicious code will appear as of the website and run within the user's browser under the privileges of the web app. It includes at least two requests to the application and is also called second-order XSS.
+
+Stored XSS does not need a malicious link to be exploited. A typical scenario has the following phases :
+- attacker stores malicious code into the vulnerable page
+- user authenticates in the platform
+- user visits vulnerable page
+- malicious code is executed by the user's browser
+
+### Tests
+- Identify all points where user input is stored into the backend and then displayed by the application. For example
+  - user profile
+  - shopping cart
+  - application file manager (if file upload is allowed)
+  - application settings/ preferences
+  - forum/message board
+  - blog (comments)
+  - log (if it stores some user input into logs)
+- Determine if input is stored and how it is positioned in the context of the page (html tag for javascript)
+- All the out-of-band channels through which the application receives and stores user input
