@@ -88,3 +88,31 @@ mpla mpla mpla <script>alert(document.cookie)</script>
 - XSS Assistant
 - Burp Suite
 - XSS Filter Evasion Cheat Sheet
+
+## Testing for HTTP Verb Tampering
+HTTP specifications includes request methods other than the standard GET and POST, Many servers may respond to these alternative methods with not anticipated results.
+Valid HTTP request methods are:
+- OPTIONS
+- GET
+- HEAD
+- POST
+- PUT
+- DELETE
+- TRACE
+- CONNECT
+WebDAV extensions also permit
+- PROPFIND
+- PROPMATCH
+- MKCOL
+- COPY
+- MOVE
+- LOCK
+- UNLOCK
+
+Standard *href* links trigget a GET request. Form data (with method='POST' trigger
+POST requests). Forms without method trigger GET requests.
+HTML standard **DOES NOT** support other methods. All other methods need to be called outside
+the html document. Javascript and AJAX allow other methods.
+
+### Tests
+Craft custom HTTP requests - preferably use a tool
