@@ -24,7 +24,7 @@ Application logs produce debug output
 3. can log usage generate DoS
 4. how they are rotated and reviewed
 5. are the data being logged validated before logging
-Logs often contain : 
+Logs often contain :
 - debug information
 - stack traces
 - usernames
@@ -85,7 +85,7 @@ Test for presence of admin interfaces by :
 - Searching on alternate server ports
 - Tampering parameters (GET, POST, Cookie) to enable admin interface
 When discovered if everything else fails, try brute forcing
-### Tools 
+### Tools
 - Dirbuster
 - THC Hydra
 - Dictionaries(net sparker)

@@ -108,7 +108,7 @@ Cookie, SessionID, hidden field, if exposed will enable attacker to impersonate 
 
 ## Testing for CSRF
 CSRF attack forces user to execute unwanted actions on a web app he has already authenticated (with a little help from social engineering). CSRF relies on
-- web browser behavior on session handling (cookies and auth information)
+- web browser behaviour on session handling (cookies and auth information)
 - knowledge by the attacker of valid web app urls
 - application session management relying only on information known by the browser
 - existence of HTML tags whose presence can cause immediate access to a _http/https_ resource (<img>).
