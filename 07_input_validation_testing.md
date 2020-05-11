@@ -1,3 +1,4 @@
+# Input Validation Testing
 ## Testing for Reflected Cross Site Scripting
 It is not persistent and only impacts users who open a maliciously crafted link. Unvalidated input is sent through requests back to the client. Attacker creates and tests an offending URI (social engineering). Attacker's code is usually in Javascript. Commot attacks install key loggers, steal victim cookies, steal clipboard content, change page content etc.
 
@@ -116,3 +117,23 @@ the html document. Javascript and AJAX allow other methods.
 
 ### Tests
 Craft custom HTTP requests - preferably use a tool
+
+### Manual HTTP verb tampering Testing
+Use netcat package (or telnet)
+1. Crafting custom HTTP requests. Each HTTP 1.1 request follows basic formatting and syntax. Type each request into *netcat* or *telnet* and examine the response.
+  ```
+  [METHOD]/[index.html]HTTP/1.1
+  host:[www.example.com]
+  ```
+  where  METHOD can use OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE or CONNECT
+2. Send the request (`nc host 80 < OPTIONS.http.txt`)
+3. Parse HTTP responses. Except GET and POST, server must **either ignore the request or return error**. Any other method should be disabled
+
+## Testing for HTTP Parameter Pollution (HPP)
+Supplying multiple params with the same name may confuse the application. Anomalous behaviour can lead to a potential exploit.
+- Input validation and filters bypass
+- Authentication bypass
+- Expected behaviour by Application server
+
+*HTTP parameters assignment is being handled by the web server and not the web application. So, testing HPP requires manual testing.*
+**HPP can manifest itself in client side and server side components.**
