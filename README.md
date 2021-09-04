@@ -21,5 +21,3 @@ Try to understand the appliction's logic, play with it, identify all the access 
 - Cryptography
 - Business Logic Tessting
 - Client Side Testing
-[Second]
-[Third]
