@@ -1,5 +1,12 @@
-# Configuration and Deployment Management Testing
-## Fingerprinting Web Application Framework 
+# Information Gathering
+## Search engine discovery for information leakage
+## Fingerprint Web Server
+## Review Webserver Metafiles for information leakage
+## Enumerate Application on Webserver
+## Review webpage comments and metadata for information leakage
+## Identify application entry points
+## Map execution paths through application
+## Fingerprinting Web Application Framework
 ### Tools
 - whatweb
 - BlindElephant
