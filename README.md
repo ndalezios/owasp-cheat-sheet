@@ -7,6 +7,6 @@ These notes contain parts copied straight from the book. \
 You can use these notes as a checklist of what you already known on application security and on what you need to sharpen. \
 Hope this helps you as it helps me...
 
-[First](./01_not_set_yet)
+[First](./01_not_set_yet.md)
 [Second]
 [Third]
