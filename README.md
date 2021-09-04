@@ -6,3 +6,7 @@ During reading this book, taking notes helps me memorize and have a better under
 These notes contain parts copied straight from the book. \
 You can use these notes as a checklist of what you already known on application security and on what you need to sharpen. \
 Hope this helps you as it helps me...
+
+[First](./blob/master/01_not_set_yet)
+[Second]
+[Third]
