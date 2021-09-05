@@ -1,5 +1,8 @@
 # Information Gathering
 ## Search engine discovery for information leakage
+- __Direct__ methods - Searching indexes and content from caches
+- __Indirect__ methods - Design and configuration information by searching forums,newsgroups etc.
+Check _robots.txt_.If it is not updated it is possible to contain sensitive web content.
 ## Fingerprint Web Server
 ## Review Webserver Metafiles for information leakage
 ## Enumerate Application on Webserver
