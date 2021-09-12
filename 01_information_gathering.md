@@ -3,6 +3,39 @@
 - __Direct__ methods - Searching indexes and content from caches
 - __Indirect__ methods - Design and configuration information by searching forums,newsgroups etc.
 Check _robots.txt_.If it is not updated it is possible to contain sensitive web content.
+### Search operators
+Use a search engine to search for
+- network diagrams & configurations
+- archived posts and emails by admins and devs
+- login procedures and username formats
+- error message content
+- development, test and unstable versions
+
+Search engines:
+- [Baidu](https://www.baidu.com/)
+- [BinSearch](https://www.usenet.com/binsearch/)
+- [Bing](https://www.bing.com/)
+- [Duck Duck Go](https://duckduckgo.com/)
+- [ixQuick](https://www.startpage.com/)
+- [Google](https://www.google.com/)
+- [Shodan](https://www.shodan.io/)
+- [PunkSpider](https://punkspider.org/)
+
+Use _site:_ and _cache:_ operators
+### Google Hacking Database
+It is a list of useful search queries arranged in several categories such as
+- footholds
+- username files
+- sensitive directories
+- ...
+
+### Tools
+- [FoundStone SiteDigger](https://foundstone-sitedigger.updatestar.com/)
+- Google Hacking Database
+- [Stach & Liu Google Hacking Diggity Project](https://resources.bishopfox.com/resources/tools/google-hacking-diggity/attack-tools/)
+- [PunkSpider](https://punkspider.org/)
+
+
 ## Fingerprint Web Server
 ## Review Webserver Metafiles for information leakage
 ## Enumerate Application on Webserver
