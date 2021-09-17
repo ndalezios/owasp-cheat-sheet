@@ -53,9 +53,15 @@ _Automated tools can be used instead of using netcat each time_
 ### robots.txt
 - retrieve a web page and recursively traverse all the hyperlinks. _Disallow_ directive is important (which dirs are prohibited) web spiders and crawlers can intentionally ignore _Disallow_. Retrieve any _robots.txt_ from webroot with _wget_ or _curl_ 
 - Analyze robots.txt with _Google Webmaster Tools_
+
 ### \<META>
-\<Meta>  is located in \<head>. If there is no \"<META NAME=ROBOTS........>" the exclusion protocol is _"INDEX, FOLLOW"_
+\<Meta>  is located in \<head>. If there is no "\<META NAME=ROBOTS........>" the exclusion protocol is _"INDEX, FOLLOW"_. \
+Web spiders can ignore the "\<META NAME=ROBOTS>"
+
 ### Tools  
+- curl
+- wger
+- [RockSpider](https://github.com/cmlh/rockspider/)
   
 ## Enumerate Application on Webserver
 ## Review webpage comments and metadata for information leakage
