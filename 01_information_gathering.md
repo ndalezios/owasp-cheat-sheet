@@ -83,11 +83,11 @@ Use a port scanner like _nmap_ (_-sV_ for service recognition) to scan the whole
    - Googling - check for the newly discovered names (eg. _owasp.org -> webgoat.org and webscarab.com_)
   
   ### Tools
-  DNS lookup tools
-  Search engines
-  [nmap](https://nmap.org/)
-  Nessus vulnerability scanner
-  [Nikto](https://cirt.net/Nikto2)
+  - DNS lookup tools
+  - Search engines
+  - [nmap](https://nmap.org/)
+  - Nessus vulnerability scanner
+  - [Nikto](https://cirt.net/Nikto2)
      
 
 ## Review webpage comments and metadata for information leakage
