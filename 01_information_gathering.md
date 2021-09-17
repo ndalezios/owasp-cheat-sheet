@@ -80,7 +80,14 @@ Use a port scanner like _nmap_ (_-sV_ for service recognition) to scan the whole
    - DNS inverse queries
    - Web based DNS searches - Netcraft Search DNS Service. The tester may get a list of names belonging to a specific domain
    - Reverse-IP services - the tester queries a web-based application instead of a nameserver (_see page 37_)
-   - Googling 
+   - Googling - check for the newly discovered names (eg. _owasp.org -> webgoat.org and webscarab.com_)
+  
+  ### Tools
+  DNS lookup tools
+  Search engines
+  [nmap](https://nmap.org/)
+  Nessus vulnerability scanner
+  [Nikto](https://cirt.net/Nikto2)
      
 
 ## Review webpage comments and metadata for information leakage
