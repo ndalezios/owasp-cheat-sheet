@@ -64,6 +64,25 @@ Web spiders can ignore the "\<META NAME=ROBOTS>"
 - [RockSpider](https://github.com/cmlh/rockspider/)
   
 ## Enumerate Application on Webserver
+Find out what other apps are hosted on a web server (many apps or misconfigured apps have known vulnerabilities)\
+altough it's a bit uncommon for a web server to host multiple apps.
+1. Different base URL - there is nothing forcing the app to start at "/" (_example.com/url1, example.com/url2_ ...). 
+_So, example.com is not a meaningful page_. Or it is?
+No certain way and no fix criteria. If the webserver is misconfigured may allow directory browsing. These apps may 
+be referenced by other web pages and may have beed spidered and indexed (serach with _site:_ directive eg. _site:www.example.com_)
+as this may reveal a non obvious application. Do some directory style searching or intelligent guessing (you could find 
+a Tomcat administrative interface)
+2. Non-standard ports - 80 for http and 443 for https are usually used, but arbitary TCP ports can also be used eg. _example.com:2000_.
+Use a port scanner like _nmap_ (_-sV_ for service recognition) to scan the whole 64K TCP port range.
+3. Virtual hosts - 1 IP to N symbolic names. Use the following techniques to identify names associated to an IP address:
+   - DNS zone transfers - first determine the nameservers serving the ip. If symbolic name is known use _nsllokup, host, dig_ etc. If no
+     symbolic name is known but target contains at least one, try to test that (_see page 36_)
+   - DNS inverse queries
+   - Web based DNS searches - Netcraft Search DNS Service. The tester may get a list of names belonging to a specific domain
+   - Reverse-IP services - the tester queries a web-based application instead of a nameserver (_see page 37_)
+   - Googling 
+     
+
 ## Review webpage comments and metadata for information leakage
 ## Identify application entry points
 ## Map execution paths through application
