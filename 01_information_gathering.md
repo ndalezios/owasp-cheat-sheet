@@ -37,6 +37,18 @@ It is a list of useful search queries arranged in several categories such as
 
 
 ## Fingerprint Web Server
+- Black box - check the _Server_ field in the HTTP Response with _netcat_
+- HTTP header field ordering - every webserver has different inner ordering (use _netcat_)
+- Malformed requests test - send malformed requests of nonexisting pages to the server (_netcat_). Every server responds differently
+
+_Automated tools can be used instead of using netcat each time_
+
+### Tools
+- httprint
+- httprecon
+- [Netcraft](https://www.netcraft.com/)
+- [Desenmascarame](https://desenmascara.me/)
+
 ## Review Webserver Metafiles for information leakage
 ## Enumerate Application on Webserver
 ## Review webpage comments and metadata for information leakage
