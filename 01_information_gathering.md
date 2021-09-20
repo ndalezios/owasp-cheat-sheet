@@ -35,8 +35,6 @@ It is a list of useful search queries arranged in several categories such as
 - [Stach & Liu Google Hacking Diggity Project](https://resources.bishopfox.com/resources/tools/google-hacking-diggity/attack-tools/)
 - [PunkSpider](https://punkspider.org/)
 
-
-
 ## Fingerprint Web Server
 - Black box - check the _Server_ field in the HTTP Response with _netcat_
 - HTTP header field ordering - every webserver has different inner ordering (use _netcat_)
@@ -49,8 +47,6 @@ _Automated tools can be used instead of using netcat each time_
 - httprecon
 - [Netcraft](https://www.netcraft.com/)
 - [Desenmascarame](https://desenmascara.me/)
-
-
 
 ## Review Webserver Metafiles for information leakage
 ### robots.txt
@@ -65,8 +61,6 @@ Web spiders can ignore the "\<META NAME=ROBOTS>"
 - curl
 - wger
 - [RockSpider](https://github.com/cmlh/rockspider/)
-
-
 
 ## Enumerate Application on Webserver
 Find out what other apps are hosted on a web server (many apps or misconfigured apps have known vulnerabilities)\
@@ -94,21 +88,14 @@ Use a port scanner like _nmap_ (_-sV_ for service recognition) to scan the whole
   - Nessus vulnerability scanner
   - [Nikto](https://cirt.net/Nikto2)
 
-
-
 ## Review webpage comments and metadata for information leakage
-
-
 ## Identify application entry points
-
-
 ## Map execution paths through application
-
-
 ## Fingerprinting Web Application Framework
 ### Tools
 - whatweb
 - BlindElephant
+
 ## Fingerprinting Web Application
 WordPress, phpBB, MediaWiki etc. as application components \
 known headers, cookies & directory structures \
@@ -121,6 +108,7 @@ check robots.txt
 - BlindElephant
 - wappalyzer
 - FuzzDB wordlists of predicatble files/folders
+
 ## Map Application Architecture
 It is important to map the network and application architecture as it can vary from a simple webapp and a single server to a complex one (online banking) with multiple servers involved. \
 A complex one usually need 
