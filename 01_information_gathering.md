@@ -36,6 +36,7 @@ It is a list of useful search queries arranged in several categories such as
 - [PunkSpider](https://punkspider.org/)
 
 
+
 ## Fingerprint Web Server
 - Black box - check the _Server_ field in the HTTP Response with _netcat_
 - HTTP header field ordering - every webserver has different inner ordering (use _netcat_)
@@ -48,6 +49,7 @@ _Automated tools can be used instead of using netcat each time_
 - httprecon
 - [Netcraft](https://www.netcraft.com/)
 - [Desenmascarame](https://desenmascara.me/)
+
 
 
 ## Review Webserver Metafiles for information leakage
@@ -63,6 +65,7 @@ Web spiders can ignore the "\<META NAME=ROBOTS>"
 - curl
 - wger
 - [RockSpider](https://github.com/cmlh/rockspider/)
+
 
 
 ## Enumerate Application on Webserver
@@ -90,7 +93,8 @@ Use a port scanner like _nmap_ (_-sV_ for service recognition) to scan the whole
   - [nmap](https://nmap.org/)
   - Nessus vulnerability scanner
   - [Nikto](https://cirt.net/Nikto2)
-     
+
+
 
 ## Review webpage comments and metadata for information leakage
 
