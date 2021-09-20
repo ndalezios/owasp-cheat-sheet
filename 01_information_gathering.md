@@ -49,6 +49,7 @@ _Automated tools can be used instead of using netcat each time_
 - [Netcraft](https://www.netcraft.com/)
 - [Desenmascarame](https://desenmascara.me/)
 
+
 ## Review Webserver Metafiles for information leakage
 ### robots.txt
 - retrieve a web page and recursively traverse all the hyperlinks. _Disallow_ directive is important (which dirs are prohibited) web spiders and crawlers can intentionally ignore _Disallow_. Retrieve any _robots.txt_ from webroot with _wget_ or _curl_ 
@@ -62,7 +63,8 @@ Web spiders can ignore the "\<META NAME=ROBOTS>"
 - curl
 - wger
 - [RockSpider](https://github.com/cmlh/rockspider/)
-  
+
+
 ## Enumerate Application on Webserver
 Find out what other apps are hosted on a web server (many apps or misconfigured apps have known vulnerabilities)\
 altough it's a bit uncommon for a web server to host multiple apps.
@@ -91,8 +93,14 @@ Use a port scanner like _nmap_ (_-sV_ for service recognition) to scan the whole
      
 
 ## Review webpage comments and metadata for information leakage
+
+
 ## Identify application entry points
+
+
 ## Map execution paths through application
+
+
 ## Fingerprinting Web Application Framework
 ### Tools
 - whatweb
