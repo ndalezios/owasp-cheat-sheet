@@ -89,6 +89,18 @@ Use a port scanner like _nmap_ (_-sV_ for service recognition) to scan the whole
   - [Nikto](https://cirt.net/Nikto2)
 
 ## Review webpage comments and metadata for information leakage
+- Look for html comments - it might be SQL code, usernames and passwords, internal IPs or debugging information
+- Check html version information for valid version numbers and _Data Type Definition (DTD)_ urls - strict, loose or frameset
+- Some Meta tagsalter HTTP response headers such as _http-equiv_ that sets an HTTP Response header based on the attribute's content. \
+  eg. 
+  ```<META http-equiv="Expires" content="Fri, 21 Dec ..."> ``` will change the result in HTTP Response header. 
+  Test to see if it can be used to conduct injection attacks (CSRF)
+
+### Tools
+- View source
+- Eyeballs
+- curl
+   
 ## Identify application entry points
 ## Map execution paths through application
 ## Fingerprinting Web Application Framework
