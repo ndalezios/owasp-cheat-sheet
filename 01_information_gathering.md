@@ -125,18 +125,29 @@ Points of interest :
 - Tamper Data (Firefox plug-in)
 
 ## Map execution paths through application
+Testing all code paths would be time consuming. All code paths that were discovered should be documented.\ 
+Ways to approach testing and measurement of code coverage :
+- Path - test each path through an application (spider)
+- Data flow - test the assignement of variables
+- Race - Test multiple concurent instances of the application
+One could also ask the application owner what functions or code sections are _crucial_.
+
+### Tools
+- Spreadsheet
+- Diagramming software
+
 ## Fingerprinting Web Application Framework
 ### Tools
 - whatweb
 - BlindElephant
 
 ## Fingerprinting Web Application
-WordPress, phpBB, MediaWiki etc. as application components \
-known headers, cookies & directory structures \
-specific files and folders (eg. wp-admin) \
-source code – meta name=”generator” content=”WordPress 3.9.2” \
-dirbusting – brute force with folder and file names and monitor http responses in order to enumerate server contents \
-check robots.txt 
+- WordPress, phpBB, MediaWiki etc. as application components 
+- known headers, cookies & directory structures 
+- specific files and folders (eg. wp-admin) 
+- source code – meta name=”generator” content=”WordPress 3.9.2” 
+- dirbusting – brute force with folder and file names and monitor http responses in order to enumerate server contents 
+- check robots.txt 
 ### Tools
 - whatweb
 - BlindElephant
