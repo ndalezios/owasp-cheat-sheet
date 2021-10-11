@@ -102,6 +102,28 @@ Use a port scanner like _nmap_ (_-sV_ for service recognition) to scan the whole
 - curl
    
 ## Identify application entry points
+Tester should always get a good understanding of the application. Tester should pay attention to all HTTP Requests (GET and POST - when each one is used) 
+as well as every parameter and form field. Use an intercepting proxy and a spreadsheet for this stage.
+Take notes of any interesting parameters in the URL, custom headers or body of the requests and responses and save them in a spreadsheet. Note if SSL is used,
+the type of request, if it's part of a multistep process etc.
+Points of interest :
+- Requests : 
+  - Identity where GETs and where POSTs are used
+  - Identify all parameters used in a POST request
+  - Identify all parameters used in a GET request
+  - Identify all parameters of a query string
+  - some or all the parameters within a POST request will be needed to execute the attacks
+  - Identify which parameters are processed by the application
+  - pay attention to any additional or custom type headers (eg. _debug=False_)
+- Responses :
+  - Identify where new cookies are ste, modified or added to (_set_cookie_ header)
+  - Identify where there are redirects (3xx HTTP status, 400, 403 and 500)
+  - Where interesting headers are used (eg. _server:BIG-IP_ indicates a load balancer)
+
+### Tools
+- Burp
+- Tamper Data (Firefox plug-in)
+
 ## Map execution paths through application
 ## Fingerprinting Web Application Framework
 ### Tools
