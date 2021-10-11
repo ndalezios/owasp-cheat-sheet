@@ -137,6 +137,9 @@ One could also ask the application owner what functions or code sections are _cr
 - Diagramming software
 
 ## Fingerprinting Web Application Framework
+It is a great advantage to knwo not only known vulnerabilities but also specific misconfigurations of a knwo framework. 
+Known tools look for a number in a predefined location to identify the framework.
+
 ### Tools
 - whatweb
 - BlindElephant
