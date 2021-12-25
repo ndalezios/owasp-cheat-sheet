@@ -137,3 +137,7 @@ Supplying multiple params with the same name may confuse the application. Anomal
 
 *HTTP parameters assignment is being handled by the web server and not the web application. So, testing HPP requires manual testing.*
 **HPP can manifest itself in client side and server side components.**
+
+## Testing for SQL Injection
+### Detection Techniques
+### Exploitation Rechniques
